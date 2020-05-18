@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DML-COMMANDS</title>
+    <link rel="stylesheet" href="cstyle.css">
+</head>
+<body>
+<h1>DML COMMANDS</h1>
+    <div class="container">
+        <nav class="navbar">
+            <ul>
+          
+                <li><a href="#SELECT">SELECT</a></li>
+                <li><a href="#INSERT">INSERT</a></li>
+                <li><a href="#UPDATE">UPDATE</a></li>
+                <li><a href="#DELETE">DELETE</a></li>
+       
+            </ul>
+        </nav>
+   
+    <section id="DML-COMMANDS">
+        <h2>WHAT ARE DML COMMANDS?</h2>
+        <p>The SQL commands that deals with the manipulation of data present in the database belong to <br>
+          DML or Data Manipulation Language and this includes most of the SQL statements. <br>
+          EXAMPLES of DML are: <br>
+        <a href="#SELECT">SELECT:</a>is used to retrieve data from the a database. <br><br>
+        <a href="#INSERT">INSERT:</a> is used to insert data into a table. <br><br>
+        <a href="#UPDATE">UPDATE:</a>is used to update existing data within a table.<br><br>
+        <a href="#DELETE">DELETE:</a> is used to delete records from a database table.<br> <br>
+        CLAUSES: <br>
+        FROM CLAUSE:The FROM clause specifies the target table(s) for <br>
+        SELECT, UPDATE, and DELETE statements. <br>
+        WHERE CLAUSE: Specify which row to retrieve. <br>
+        GROUP BY CLAUSE: Used to arrange data into groups. <br>
+        HAVING CLAUSE: Used to select among groups by clauses. <br>
+        ORDER BY CLAUSE : Specifies the order. 
+        </p>
+    </section>
+    <section id="SELECT">
+        <h2>SQL|SELECT</h2> <br>
+        <p>Select is the most commonly used statement in SQL. <br>
+            The SELECT Statement in SQL is used to retrieve or fetch data from a database. <br>
+            We can fetch either the entire table or according to some specified rules. <br>
+            The data returned is stored in a result table.  <br>
+            This result table is also called result-set. <br><br>
+    
+            With the SELECT clause of a SELECT command statement, we specify the columns that <br>
+            we want to be displayed in the query result and, optionally, which column headings we <br>
+            prefer to see above the result table. <br><br>
+            
+            The select clause is the first clause and is one of the last clauses of the select statement <br>
+             that the database server evaluates.  <br>
+            The reason for this is that before we can determine what to include in the final result set, <br>
+             we need to know all of the possible columns that could be included in the final result set. <br> <br>
+        </p>
+          <h2>SAMPLE TABLE </h2> <br>
+          <table class="tab">
+              <thead>
+                  <tr>
+                      <th>ROLL_NO</th>
+                      <th>NAME</th>
+                      <th>AGE</th>
+                      <th>PHONE_NO</th>
+                      <th>EMAIL_ADDRESS</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <th>1</th>
+                      <th>RAM</th>
+                      <th>18</th>
+                      <th>XXXXXXXXXX</th>
+                      <th>YYY@gmail.com</th>
+                  </tr>
+                  <tr>
+                    <th>2</th>
+                    <th>ABHI</th>
+                    <th>19</th>
+                    <th>XXXXXXXXXX</th>
+                    <th>YYY@gmail.com</th>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <th>RAHUL</th>
+                    <th>19</th>
+                    <th>XXXXXXXXXX</th>
+                    <th>YYY@gmail.com</th>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <th>TANU</th>
+                    <th>20</th>
+                    <th>XXXXXXXXXX</th>
+                    <th>YYY@gmail.com</th>
+                </tr>
+              </tbody>
+          </table> <br>
+          <h2>SYNTAX </h2>
+           <p class="boxed">SELECT column1,column2 FROM table_name  <br>
+            column1 , column2: names of the fields of the table <br>
+            table_name: from where we want to fetch <br> <br>
+           </p> <br>
+
+         <p> This query will return all the rows in the table with fields column1 , column2. <br>
+          1)To fetch the entire table or all the fields in the table:
+           SELECT * FROM table_name; <br> <br>
+          Q1) Query to fetch the fields ROLL_NO, NAME, AGE from the table Student. <br>
+          SELECT ROLL_NO,FIRST_NAME, AGE FROM Student; <br> <br>
+        </p>
+        <h2>OUTPUT:</h2> <br> 
+        <table class="tab">
+            <thead>
+                <tr>
+                    <th>ROLL_NO</th>
+                    <th>NAME</th>
+                    <th>AGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <th>RAM</th>
+                    <th>18</th>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <th>ABHI</th>
+                  <th>19</th>
+              </tr>
+              <tr>
+                  <th>3</th>
+                  <th>RAHUL</th>
+                  <th>19</th>
+              </tr>
+              <tr>
+                  <th>4</th>
+                  <th>TANU</th>
+                  <th>20</th>
+              </tr>
+            </tbody>
+        </table> <br>
+        <p><li>To fetch all the fields from the table Student</li></p>
+        <p> SELECT * FROM Student; <br> <br>
+        </p>
+        <h2>OUTPUT:</h2> <br>
+        <table class="tab">
+            <thead>
+                <tr>
+                    <th>ROLL_NO</th>
+                    <th>NAME</th>
+                    <th>AGE</th>
+                    <th>PHONE_NO</th>
+                    <th>EMAIL_ADDRESS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <th>RAM</th>
+                    <th>18</th>
+                    <th>XXXXXXXXXX</th>
+                    <th>YYY@gmail.com</th>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <th>ABHI</th>
+                  <th>19</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>3</th>
+                  <th>RAHUL</th>
+                  <th>19</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>4</th>
+                  <th>TANU</th>
+                  <th>20</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+            </tbody>
+        </table> <br>
+        <a href="#INSERT" class="btn">MORE ABOUT INSERT</a>
+    </section>
+    <section id="INSERT">
+        <h2>SQL|INSERT</h2> <br>
+      <p>The INSERT INTO statement of SQL is used to insert a new row in a table.  <br>
+        There are two ways of using INSERT INTO statement for inserting rows: <br>
+      </p>
+      <p>
+        1)Only values: First method is to specify only the value of data to be <br> inserted without the column names. <br> <br> </p>
+        <h2>SYNTAX</h2>
+        <p class="boxed">
+        INSERT INTO table_name VALUES (value1, value2, value3,…); <br>
+          table_name: name of the table. <br> <br>
+        </p>
+        <p>  
+          value1, value2,.. : value of first column, second column,… for the new <br>
+          record <br>
+        </p>
+        <p>
+        2)Column names and values both: In the second method we will specify <br> both the columns which we want
+           to fill and their corresponding <br> values as shown below: <br> <br>
+        </p>
+            <h2>SYNTAX</h2>   
+            <p class="boxed">
+          INSERT INTO table_name (column1, column2, column3,..) <br> VALUES ( value1, value2, value3,..); <br>
+            </p>
+            <P>
+            table_name: name of the table. <br>
+            column1: name of first column, second column … <br>
+            value1, value2, value3 : value of first column, second column,… <br>
+            for the new record <br> <br>
+      </p>
+      <h2>STUDENT</h2>
+      <table class="tab">
+        <thead>
+            <tr>
+                <th>ROLL_NO</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>PHONE_NO</th>
+                <th>EMAIL_ADDRESS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <th>RAM</th>
+                <th>18</th>
+                <th>XXXXXXXXXX</th>
+                <th>YYY@gmail.com</th>
+            </tr>
+            <tr>
+              <th>2</th>
+              <th>ABHI</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>3</th>
+              <th>RAHUL</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>4</th>
+              <th>TANU</th>
+              <th>20</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+        </tbody>
+    </table>
+    <p>Method 1 (Inserting only values) : <br>
+       INSERT INTO Student VALUES (‘5′,’HARSH’,’21’,’XXXXXXXXXX’,’YYY@gmail.com’); <br> <br>
+    </p>
+    <h2>OUTPUT:</h2>
+    <table class="tab">
+        <thead>
+            <tr>
+                <th>ROLL_NO</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>PHONE_NO</th>
+                <th>EMAIL_ADDRESS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <th>RAM</th>
+                <th>18</th>
+                <th>XXXXXXXXXX</th>
+                <th>YYY@gmail.com</th>
+            </tr>
+            <tr>
+              <th>2</th>
+              <th>ABHI</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>3</th>
+              <th>RAHUL</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>4</th>
+              <th>TANU</th>
+              <th>20</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>5</th>
+              <th>HARSH</th>
+              <th>21</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+        </tbody>
+    </table>
+    <p>Method 2 (Inserting values in only specified columns): <br>
+        INSERT INTO Student (ROLL_NO,NAME, Age) VALUES (‘5′,’PRATIK’,’19’); <br> <br>
+    </p>
+    <h2>OUTPUT:</h2>
+    <table class="tab">
+        <thead>
+            <tr>
+                <th>ROLL_NO</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>PHONE_NO</th>
+                <th>EMAIL_ADDRESS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <th>RAM</th>
+                <th>18</th>
+                <th>XXXXXXXXXX</th>
+                <th>YYY@gmail.com</th>
+            </tr>
+            <tr>
+              <th>2</th>
+              <th>ABHI</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>3</th>
+              <th>RAHUL</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>4</th>
+              <th>TANU</th>
+              <th>20</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>5</th>
+              <th>HARSH</th>
+              <th>21</th>
+              <th>NULL</th>
+              <th>NULL</th>
+          </tr>
+        </tbody>
+    </table>
+    <p>Notice that the columns for which the values are not provided are filled by null. <br>
+         Which is the default values for those columns. <br> <br></p>
+    <h2>Using SELECT in INSERT INTO Statement</h2> <br>
+    <p>We can use the SELECT statement with INSERT INTO statement to copy rows from  <br>
+        one table and insert them into another table. <br>
+        The use of this statement is similar to that of INSERT INTO statement. <br>
+         The difference is that the SELECT statement is used here to select data from a different table. <br>
+         The different ways of using INSERT INTO SELECT statement are shown below: <br>
+         <li>Inserting all columns of a table: We can copy all the data of a table and insert into in a <br> different  table.</li>
+    </p> <br> <br>
+    <h2>SYNTAX</h2>
+    <p class="boxed">INSERT INTO first_table SELECT * FROM second_table; <br><br>
+
+        first_table: name of first. <br>
+        second_table: name of second table <br> <br>
+    </p>
+    <p>We have used the SELECT statement to copy the data from one table and INSERT INTO <br> statement to insert in a different table. <br>
+        <li>Inserting specific columns of a table: We can copy only those columns of a  table <br> which we want  to insert into in a different table.</li>
+    </p> <br> <br>
+    <h2>SYNTAX</h2>
+    <p class="boxed">INSERT INTO first_table(names_of_columns1) SELECT names_of_columns2 FROM second_table; <br>
+        first_table: name of first table. <br>
+        second_table: name of second table. <br>
+        names of columns1: name of columns separated by comma(,) for table 1. <br>
+        names of columns2: name of columns separated by comma(,) for table 2. <br> <br>
+    </p>
+    <p>
+        We have used the SELECT statement to copy the data of the selected columns only from the  second <br> table and INSERT INTO  statement to insert in first table. <br>
+        <li>Copying specific rows from a table:
+            We can copy specific rows from a table to insert into another <br> table by  using WHERE clause with the SELECT statement. <br>
+            We have to provide appropriate condition in the WHERE clause to select specific rows. <br> <br>
+        </li>
+    </p>
+    <h2>SYNTAX</h2>
+    <p class="boxed">INSERT INTO table1 SELECT * FROM table2 WHERE condition; <br>
+        first_table: name of first table. <br>
+        second_table: name of second table. <br>
+        condition: condition to select specific rows. <br> <br>
+    </p>
+    <h2>TABLE-2:LATERAL_STUDENT</h2>
+    <table class="tab">
+        <thead>
+            <tr>
+                <th>ROLL_NO</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>PHONE_NO</th>
+                <th>EMAIL_ADDRESS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>6</th>
+                <th>ASHISH</th>
+                <th>18</th>
+                <th>XXXXXXXXXX</th>
+                <th>YYY@gmail.com</th>
+            </tr>
+            <tr>
+              <th>7</th>
+              <th>ANEESH</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>8</th>
+              <th>VENKAT</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>9</th>
+              <th>ANITA</th>
+              <th>20</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>10</th>
+              <th>NARAYANA</th>
+              <th>21</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+        </tbody>
+    </table>
+    <h2>QUERIES</h2> <br>
+    <p><li>Method 1(Inserting all rows and columns:</li></p>
+    <p>    INSERT INTO Student SELECT * FROM LATERAL_STUDENT;
+    </p> <br> <br>
+    <h2>OUTPUT:</h2> <br>
+    <p>This query will select everything from LATERAL_STUDENT and insert it into the STUDENT <br> table now the table should look like this:
+    </p>
+    <table class="tab">
+        <thead>
+            <tr>
+                <th>ROLL_NO</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>PHONE_NO</th>
+                <th>EMAIL_ADDRESS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <th>RAM</th>
+                <th>18</th>
+                <th>XXXXXXXXXX</th>
+                <th>YYY@gmail.com</th>
+            </tr>
+            <tr>
+              <th>2</th>
+              <th>ABHI</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>3</th>
+              <th>RAHUL</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>4</th>
+              <th>TANU</th>
+              <th>20</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>5</th>
+              <th>HARSH</th>
+              <th>21</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+            <th>6</th>
+            <th>ASHISH</th>
+            <th>18</th>
+            <th>XXXXXXXXXX</th>
+            <th>YYY@gmail.com</th>
+        </tr>
+        <tr>
+          <th>7</th>
+          <th>ANEESH</th>
+          <th>19</th>
+          <th>XXXXXXXXXX</th>
+          <th>YYY@gmail.com</th>
+      </tr>
+      <tr>
+          <th>8</th>
+          <th>VENKAT</th>
+          <th>19</th>
+          <th>XXXXXXXXXX</th>
+          <th>YYY@gmail.com</th>
+      </tr>
+      <tr>
+          <th>9</th>
+          <th>ANITA</th>
+          <th>20</th>
+          <th>XXXXXXXXXX</th>
+          <th>YYY@gmail.com</th>
+      </tr>
+      <tr>
+          <th>10</th>
+          <th>NARAYANA</th>
+          <th>21</th>
+          <th>XXXXXXXXXX</th>
+          <th>YYY@gmail.com</th>
+      </tr>
+        </tbody>
+    </table>
+    <p><li>Method 2(Inserting specific columns):</li></p>
+        <p>INSERT INTO Student(ROLL_NO,NAME,Age) SELECT ROLL_NO, FIRST_NAME, Age FROM LATERAL_STUDENTS; <br> <br>
+    </p>
+    <h2>OUTPUT:</h2> <br> 
+    <p>This query will insert the data in the columns ROLL_NO, <br>
+        NAME and Age of the table LateralStudent in the table Student and the <br> remaining columns in the Student table will be filled by null which is the default value of the remaining columns. <br>
+        The table Student will now look like,
+       </p>
+       <table class="tab">
+        <thead>
+            <tr>
+                <th>ROLL_NO</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>PHONE_NO</th>
+                <th>EMAIL_ADDRESS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <th>RAM</th>
+                <th>18</th>
+                <th>XXXXXXXXXX</th>
+                <th>YYY@gmail.com</th>
+            </tr>
+            <tr>
+              <th>2</th>
+              <th>ABHI</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>3</th>
+              <th>RAHUL</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>4</th>
+              <th>TANU</th>
+              <th>20</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>5</th>
+              <th>HARSH</th>
+              <th>21</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+            <th>6</th>
+            <th>ASHISH</th>
+            <th>18</th>
+            <th>NULL</th>
+            <th>NULL</th>
+        </tr>
+        <tr>
+          <th>7</th>
+          <th>ANEESH</th>
+          <th>19</th>
+          <th>NULL</th>
+          <th>NULL</th>
+      </tr>
+      <tr>
+          <th>8</th>
+          <th>VENKAT</th>
+          <th>19</th>
+          <th>NULL</th>
+          <th>NULL</th>
+      </tr>
+      <tr>
+          <th>9</th>
+          <th>ANITA</th>
+          <th>20</th>
+          <th>NULL</th>
+          <th>NULL</th>
+      </tr>
+      <tr>
+          <th>10</th>
+          <th>NARAYANA</th>
+          <th>21</th>
+          <th>NULL</th>
+          <th>NULL</th>
+      </tr>
+        </tbody>
+    </table>
+    <p><li>Select specific rows to insert:</li></p>
+       <p> INSERT INTO Student SELECT * FROM LateralStudent WHERE Age = 18; <br> <br>
+    </p>
+    <h2>OUTPUT</h2> <br> 
+    <p>This query will select only the first row from table LateralStudent to insert into the table Student.
+        The table Student will now look like,
+    </p>
+    <table class="tab">
+        <thead>
+            <tr>
+                <th>ROLL_NO</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>PHONE_NO</th>
+                <th>EMAIL_ADDRESS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <th>RAM</th>
+                <th>18</th>
+                <th>XXXXXXXXXX</th>
+                <th>YYY@gmail.com</th>
+            </tr>
+            <tr>
+              <th>2</th>
+              <th>ABHI</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>3</th>
+              <th>RAHUL</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>4</th>
+              <th>TANU</th>
+              <th>20</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>5</th>
+              <th>HARSH</th>
+              <th>21</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>6</th>
+              <th>ASHISH</th>
+              <th>18</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+        </tbody>
+    </table>
+  
+    </section>
+    <section id="UPDATE">
+        <h2>SQL|UPDATE</h2>
+        <p>The UPDATE statement in SQL is used to update the data of an existing table in database. <br>
+            We can update single columns as well as multiple columns using UPDATE statement as per <br>
+             our requirement. <br> <br>
+        </p>
+        <h2>SYNTAX</h2>
+        <p class="boxed">UPDATE table_name SET column1 = value1, column2 = value2,... <br>
+            WHERE condition; <br><br>
+            
+            table_name: name of the table <br>
+            column1: name of first , second, third column.... <br>
+            value1: new value for first, second, third column.... <br>
+            condition: condition to select the rows for which the <br>
+            values of columns needs to be updated. <br> <br>
+        </p>
+        <p>NOTE: In the above query the SET statement is used to set new values to the particular <br> column and the  
+            WHERE clause is used to select the rows for which the columns are needed <br> to be updated. 
+            If we have not used the WHERE clause then the columns in all the rows will <br> be updated. 
+            So the WHERE clause is used to choose the particular rows. <br> <br>
+        </p>
+        <h2>STUDENT</h2>
+        <table class="tab">
+            <thead>
+                <tr>
+                    <th>ROLL_NO</th>
+                    <th>NAME</th>
+                    <th>AGE</th>
+                    <th>PHONE_NO</th>
+                    <th>EMAIL_ADDRESS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <th>RAM</th>
+                    <th>18</th>
+                    <th>XXXXXXXXXX</th>
+                    <th>YYY@gmail.com</th>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <th>ABHI</th>
+                  <th>19</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>3</th>
+                  <th>RAHUL</th>
+                  <th>20</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>4</th>
+                  <th>TANU</th>
+                  <th>20</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>5</th>
+                  <th>HARSH</th>
+                  <th>20</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>6</th>
+                  <th>ASHISH</th>
+                  <th>18</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+            </tbody>
+        </table>
+        <h2>EXAMPLE QUERIES</h2> <br>
+        <p><li>Updating single column: Update the column NAME and set the value to ‘PRATIK’ in all the <br> rows where Age is 20.</li> </p><br>
+       <p> UPDATE Student SET NAME = 'PRATIK' WHERE Age = 20;</p> <br>
+        <h2>OUTPUT</h2> 
+        <p>This query will update two rows(fourth row and fifth row) and the table Student will now look like,</p> <br>
+        <h2>STUDENT</h2>
+        <table class="tab">
+            <thead>
+                <tr>
+                    <th>ROLL_NO</th>
+                    <th>NAME</th>
+                    <th>AGE</th>
+                    <th>PHONE_NO</th>
+                    <th>EMAIL_ADDRESS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <th>RAM</th>
+                    <th>18</th>
+                    <th>XXXXXXXXXX</th>
+                    <th>YYY@gmail.com</th>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <th>ABHI</th>
+                  <th>19</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>3</th>
+                  <th>PRATIK</th>
+                  <th>20</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>4</th>
+                  <th>PRATIK</th>
+                  <th>20</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>5</th>
+                  <th>PRATIK</th>
+                  <th>20</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>6</th>
+                  <th>ASHISH</th>
+                  <th>18</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+            </tbody>
+        </table>
+        <p><li>Updating multiple columns: Update the columns NAME to ‘PRATIK’ and  <br>
+            ADDRESS to ‘MMMMMMMMMM’ where ROLL_NO is 1.</li> <br>
+         UPDATE Student SET NAME = 'PRATIK',EMAIL_ADDRESS = 'MMMMMMMMMM' WHERE ROLL_NO = 1;</p> <br>
+         <h2>OUTPUT:</h2>
+         <p>The above query will update two columns in the first row and the table Student will now look like,</p>
+         <table class="tab">
+            <thead>
+                <tr>
+                    <th>ROLL_NO</th>
+                    <th>NAME</th>
+                    <th>AGE</th>
+                    <th>PHONE_NO</th>
+                    <th>EMAIL_ADDRESS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <th>PRATIK</th>
+                    <th>18</th>
+                    <th>MMMMMMMMMM</th>
+                    <th>YYY@gmail.com</th>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <th>ABHI</th>
+                  <th>19</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>3</th>
+                  <th>PRATIK</th>
+                  <th>20</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>4</th>
+                  <th>PRATIK</th>
+                  <th>20</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>5</th>
+                  <th>PRATIK</th>
+                  <th>20</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>6</th>
+                  <th>ASHISH</th>
+                  <th>18</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+            </tbody>
+        </table>
+        <p>Note: For updating multiple columns we have used comma(,) <br>
+             to separate the names and values of two columns. <br> <br>
+        <li>Omitting WHERE clause: If we omit the WHERE clause from the update query then all <br> of the rows will get updated.</li> <br><P>
+            UPDATE Student SET NAME = 'PRATIK';</p> <br>
+        <h2>OUTPUT:</h2> <br>
+        <p>The table Student will now look like,</p>
+        <table class="tab">
+            <thead>
+                <tr>
+                    <th>ROLL_NO</th>
+                    <th>NAME</th>
+                    <th>AGE</th>
+                    <th>PHONE_NO</th>
+                    <th>EMAIL_ADDRESS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <th>PRATIK</th>
+                    <th>18</th>
+                    <th>MMMMMMMMMM</th>
+                    <th>YYY@gmail.com</th>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <th>PRATIK</th>
+                  <th>19</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>3</th>
+                  <th>PRATIK</th>
+                  <th>20</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>4</th>
+                  <th>PRATIK</th>
+                  <th>20</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>5</th>
+                  <th>PRATIK</th>
+                  <th>20</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>6</th>
+                  <th>PRATIK</th>
+                  <th>18</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+            </tbody>
+        </table>
+       
+    </section>
+    <section id="DELETE">
+        <h2>SQL|DELETE</h2>
+        <p>The DELETE Statement in SQL is used to delete existing records from a table. <br>
+            We can delete a single record or multiple records depending on the condition we specify <br>
+             in the WHERE clause.
+        </p>
+        <h2>SYNTAX</h2>
+        <p class="boxed">DELETE FROM table_name WHERE some_condition; <br><br>
+
+            table_name: name of the table <br>
+            some_condition: condition to choose particular record.
+        </p> <br> 
+        <p>Note: We can delete single as well as multiple records depending on the condition we provide <br> in  WHERE clause. <br>
+            If we omit the WHERE clause then all of the records will be deleted and the table will be empty. <br>
+            SAMPLE TABLE
+        </p>
+       <h2>STUDENT</h2>
+       <table class="tab">
+        <thead>
+            <tr>
+                <th>ROLL_NO</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>PHONE_NO</th>
+                <th>EMAIL_ADDRESS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <th>RAM</th>
+                <th>18</th>
+                <th>XXXXXXXXXX</th>
+                <th>YYY@gmail.com</th>
+            </tr>
+            <tr>
+              <th>2</th>
+              <th>ABHI</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>3</th>
+              <th>RAHUL</th>
+              <th>19</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>4</th>
+              <th>TANU</th>
+              <th>20</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+          <tr>
+              <th>5</th>
+              <th>HARSH</th>
+              <th>21</th>
+              <th>XXXXXXXXXX</th>
+              <th>YYY@gmail.com</th>
+          </tr>
+        </tbody>
+    </table>
+    <h2>EXAMPLE QUERIES</h2> <br>
+    <p><li>Deleting single record: Delete the rows where NAME = ‘Ram’. This will delete only the first row.</li></p>
+      <p>  DELETE FROM Student WHERE NAME = 'Ram';</p> <br>
+        <h2>OUTPUT</h2>
+        <p>The above query will delete only the first row and the table Student will now look like,</p>
+        <table class="tab">
+            <thead>
+                <tr>
+                    <th>ROLL_NO</th>
+                    <th>NAME</th>
+                    <th>AGE</th>
+                    <th>PHONE_NO</th>
+                    <th>EMAIL_ADDRESS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <th>2</th>
+                  <th>ABHI</th>
+                  <th>19</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>3</th>
+                  <th>RAHUL</th>
+                  <th>19</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>4</th>
+                  <th>TANU</th>
+                  <th>20</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>5</th>
+                  <th>HARSH</th>
+                  <th>21</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+            </tbody>
+        </table>
+        <p><li>Deleting multiple records: Delete the rows from the table Student where Age is 20. <br>
+             This will delete 2 rows(third row and fifth row).</li> </p><br>
+      <p>  DELETE FROM Student WHERE Age = 20;</p> <br>
+        <h2>OUTPUT</h2>
+        <p>The above query will delete two rows(third row and fifth row) and the table Student will now look like,</p>
+        <table class="tab">
+            <thead>
+                <tr>
+                    <th>ROLL_NO</th>
+                    <th>NAME</th>
+                    <th>AGE</th>
+                    <th>PHONE_NO</th>
+                    <th>EMAIL_ADDRESS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <th>2</th>
+                  <th>ABHI</th>
+                  <th>19</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+              <tr>
+                  <th>5</th>
+                  <th>HARSH</th>
+                  <th>21</th>
+                  <th>XXXXXXXXXX</th>
+                  <th>YYY@gmail.com</th>
+              </tr>
+            </tbody>
+        </table>
+        <p><li>Delete all of the records: There are two queries to do this as shown below,</li></p>
+      <p>  query1: "DELETE FROM Student"; </p> 
+      <p>   query2: "DELETE * FROM Student";</p> <br>
+        <h2>OUTPUT:</h2>
+        <p>All of the records in the table will be deleted, there are no records left to display. The table Student will become empty!</p>  <hr style="width:50%;text-align:left;margin-left:0"><br><br>
+        <a href="HOME.html" class="btn" target="_blank">HOME</a>
+    </section>
+ 
+    </div>
+</body>
+</html>

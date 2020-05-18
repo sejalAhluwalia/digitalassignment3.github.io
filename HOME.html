@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>DBMS</title>
+  <link rel="stylesheet" href="cstyle.CSS">
+</head>
+<body>
+<h1>SQL concepts</h1>
+<br><br>
+  <div class="container">
+    <nav class="navbar">
+      <ul>
+        <li><a href="#SQL">SQL</a></li>
+        <li><a href="#COMPARISON">DDL vs DML</a></li>
+        <li><a href="#DDL">DDL</a></li>
+        <li><a href="#DML">DML</a></li>
+      </ul>
+    </nav>
+    <section id="SQL">
+<br><br>
+      <h3>WHAT IS SQL?</h3>
+      <p>SQL stands for structured query language.We also refer it as 'SEQUEL'. <br>
+         SQL is a databasse specific programing language - meaning it can be used with database. <br>
+         Well, it’s a popular type of database known as a relational database. <br>
+         <strong>What’s a relational database?</strong> <br> A relational database is a set of multiple data sets organised by tables, records and columns. <br>
+         Each table is known as a relation. <br>
+         Here’s a diagram which explains the concept:   <br>   
+         <img src="a.png" class="img">  <br>
+         Data is stored in tables. similar to excell sheets<br>
+         In a relational database these tables can communicate with each other based on specific fields in the database <br>
+         SQL is the language used to create, retrieve, update and delete data from a database. <br>   
+         For communicating with database SQL is broken into DDL and DML<br>     
+      </p>
+    </section>
+    <section id="COMPARISON">
+      <h2>DIFFERENCE BETWEEN DDL AND DML:</h2>
+      <p>Data Definition Language (DDL) and Data Manipulation Language (DML) together forms a Database Language. <br> 
+        The basic difference between DDL and DML is that DDL (Data Definition Language) is used to Specify the database schema database structure. <br>
+
+        On the other hand, DML (Data Manipulation Language) is used to access, modify or retrieve the data from the database. <br>
+        Let us discuss the differences between DDL and DML, with the help of comparison chart shown below. <br> <br></p>
+      <h3>COMPARISON CHART</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>BASIS OF COMPARISON</th>
+            <th>DDL</th>
+            <th>DML</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>DEF</th>
+            <th>creates the database schema.</th>
+            <th>populates and manipulates the database</th>
+          </tr>
+          <tr>
+            <th>CLASSIFICATION</th>
+            <th>not classified further.</th>
+            <th>further classified into Procedural and Non-Procedural DMLs.</th>
+          </tr>
+          <tr>
+            <th>EX</th>
+            <th>CREATE, ALTER, DROP, <br> TRUNCATE, COMMENT <br> and RENAME, etc.</th>
+            <th>SELECT, INSERT, UPDATE<br>, DELETE, MERGE, CALL, etc.</th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="DDL">
+      <h2>DDL COMMANDS</h2>
+      <p>
+        DDL or Data Definition Language actually consists of the SQL commands that can be used to define the database schema.  <br>
+        It simply deals with descriptions of the database schema and is used to create and modify the structure of database objects in the database. <br>
+        DDL COMMANDS ARE: <br>
+        1)CREATE <br>
+        2)ALTER <br>
+        3)DROP <br>
+        4)TRUNCATE <br>
+        5)COMMENT <br>
+        6)RENAME <br>
+      </p>
+      <a href="DDL.HTML" target="_blank" class="button">LEARN MORE ABOUT DDL</a>
+    </section>
+    <section id="DML">
+      <h2>DML COMMANDS</h2>
+      <p>DML stands for DATA MANIPULATION LANGUAGE. The SQL commands that deals with the manipulation of data present in the <br> database belong to 
+        DML or Data Manipulation Language and this includes most of the SQL statements.<br>
+        DML COMMANDS ARE: <br>
+        1)SELECT <br>
+        2)INSERT <br>
+        3)UPDATE <br>
+        4)DELETE <br>
+      </p>
+      <a href="DML.HTML" target="_blank" class="button">LEARN MORE ABOUT DML</a>
+    </section>
+  </div>
+</body>
+</html>

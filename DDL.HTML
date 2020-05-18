@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<head>
+    <title>DDL COMMANDS</title>
+    <link rel="stylesheet" href="cstyle.css">
+</head>
+<body>
+     <section id="HOME">
+                <h1>DDL COMMANDS</h1>
+            </section>
+    <div class="container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#CREATE">CREATE</a></li>
+                <li><a href="#DROP">DROP</a></li>
+                <li><a href="#TRUNCATE">TRUNCATE</a></li>
+                <li><a href="#ALTER">ALTER</a></li>
+                <li><a href="#RENAME">RENAME</a></li>
+                <li><a href="#COMMENT">COMMENT</a></li>
+            </ul>
+        </nav>
+       
+            <section id="DDL-COMMANDS">
+                <h2>WHAT ARE DDL COMMANDS?</h2>
+                <p>WE specify a data base schema by a set of defination expressed by a special language called DATA-DEFINATION-LANGUAGE(DDL)<br>
+                    DDL or Data Definition Language actually consists of the SQL commands that can be used to define the database schema.  <br>
+                    It simply deals with descriptions of the database schema and is used to create and modify the structure of database objects in the database. <br> 
+                    Examples of DDL  are:<br>
+                     <a href="#create"> CREATE </a> :  is used to create the database or its objects (like table, index, function, views, store procedure and triggers). <br>
+                     <a href="#drop"> DROP </a> : is used to delete objects from the database. <br>
+                     <a href="#alter"> ALTER </a> : is used to alter the structure of the database. <br>
+                     <a href="#truncate"> TRUNCATE </a>: is used to remove all records from a table, including all spaces allocated for the records are removed. <br>
+                     <a href="#comment"> COMMENT</a> : is used to add comments to the data dictionary. <br>
+                     <a href="#rename"> RENAME </a> : is used to rename an object existing in the database. <br> 
+                </p>
+            </section>
+            <section id="CREATE">
+                <h2>SQL|CREATE</h2> <br>
+                <p>There are two CREAT statements available is sql: <br>
+                    1:CREATE DATABASE <br>
+                    2:CREATE TABLE <br> <br>
+                    <h2>1:CREATE DATABASE</h2> <br>
+                    A Database is defined as a structured set of data.<br> 
+                    So, in SQL the very first step to store the data in a well structured  <br>
+                     manner is to create a database.<br> 
+                    The CREATE DATABASE statement is used to create a new database in SQL. <br> <br>
+                </p>
+                <h2>SYNTAX:</h2>
+                <p class="boxed"> CREATE DATABASE database_name; <br>
+                    database_name: name of the database. <br> <br>
+                </p>
+                <h3>EXAMPLE QUERY</h3>
+                <p>This query will create a new database in SQL and name the database as my_database. <br>
+                    CREATE DATABASE my_database; <br>
+                This will create a database of your desired name.</p> <br> <br>
+                 <h2>2:CREATE TABLE</h2>   
+                 <p>We have learned above about creating databases. Now to store the data <br>
+                  we need a table to do that.<br>
+                 The CREATE TABLE statement is used to create a table in SQL.<br>
+                 We know that a table comprises of rows and columns.<br>
+                 So while creating tables we have to provide all the information to <br>
+                 SQL about the names of the columns, <br>
+                 type of data to be stored in columns, size of the data etc.<br>
+                 Let us now dive into details on how to use CREATE TABLE statement to create tables in SQL. <br>
+                </p> <br>
+                <h2>SYNTAX:</h2> 
+                <p class="boxed">
+                    CREATE TABLE table_name <br>
+                ( <br>
+                column1 data_type(size),<br>
+                column2 data_type(size),<br>
+                column3 data_type(size),<br>
+                ....<br>
+                );<br>
+                
+                table_name:  name of the table.<br>
+                column1 name of the first column.<br>
+                data_type: Type of data we want to store in the particular column. <br>
+                For example,int for integer data.<br>
+                size: Size of the data we can store in a particular column. For example if for<br>
+                a column we specify the data_type as int and size as  <br>
+                10 then this column can store an integer<br>
+                number of maximum 10 digits. <br> <br>
+                </p>
+                <h3>EXAMPLE QUERY</h3>
+                <p>CREATE TABLE Students <br>
+                    ( <br>
+                    ROLL_NO int(3), <br>
+                    NAME varchar(20), <br>
+                    SUBJECT varchar(20),<br>
+                    );<br>
+                </p>
+                <p>
+                    This query will create a table named Students. <br>
+                The ROLL_NO field is of type int and can store an integer number of size 3. <br>
+                The next two columns NAME and SUBJECT are of type varchar and can store characters <br>
+                 and the size 20 specifies that these two fields can hold maximum of 20 characters. <br>
+                </p> <br>
+                <a href="#DROP" class="btn">MORE ABOUT DROP</a>
+            </section>
+            <section id="DROP">
+                <h2>SQL|DROP</h2> 
+                <p>
+                     DROP is used to delete a whole database or just a table. <br>
+                     The DROP statement destroys the objects like an existing database, table, index, or view. <br>
+                     A DROP statement in SQL removes a component from a relational database  <br>
+                     management system (RDBMS). <br> <br>
+                </p>
+                <h2>SYNTAX:</h2>
+                <p class="boxed">DROP object object_name <br><br>
+
+                    Examples:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DROP TABLE table_name;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table_name: Name of the table to be deleted.<br><br>
+                    
+                    DROP DATABASE database_name;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;database_name: Name of the database to be deleted.
+                </p> <br>
+                <a href="#TRUNCATE" class="btn">MORE ABOUT TRUNCATE</a>
+            </section>
+            <section id="TRUNCATE">
+                <h2>SQL|TRUNCATE</h2>
+                <p>TRUNCATE statement is a Data Definition Language (DDL) operation that is used <br>
+                     to mark the extents of a table for deallocation (empty for reuse). <br>
+                    The result of this operation quickly removes all data from a table, typically <br>
+                     bypassing a number of integrity enforcing mechanisms <br> <br>
+                    </p>
+                    <h2>SYNTAX:</h2>
+                    <p class="boxed">TRUNCATE TABLE  table_name; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table_name: Name of the table to be truncated. <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATABASE name - student_data
+                    </p> <br> <br>
+                    <h4>DROP VS TRUNCATE</h4>
+                    <p> 1)Truncate is normally ultra-fast and its ideal for deleting data from a temporary table. <br>
+                        2)Truncate preserves the structure of the table for future use, unlike drop table where <br>
+                         the table is deleted with its full structure. <br>
+                        3)Table or Database deletion using DROP statement cannot be rolled back,  <br>
+                        so it must be used wisely. <br>  <br>
+                    </p>
+                    <h3>EXAMPLE</h3> <br>
+                    <h3>STUDENT</h3>
+                    <table class="tab">
+                        <thead>
+                            <tr>
+                                <th>ROLL_NO</th>
+                                <th>NAME</th>
+                                <th>AGE</th>
+                                <th>PHONE_NO</th>
+                                <th>EMAIL_ADDRESS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <th>RAM</th>
+                                <th>18</th>
+                                <th>XXXXXXXXXX</th>
+                                <th>YYY@gmail.com</th>
+                            </tr>
+                            <tr>
+                              <th>2</th>
+                              <th>ABHI</th>
+                              <th>19</th>
+                              <th>XXXXXXXXXX</th>
+                              <th>YYY@gmail.com</th>
+                          </tr>
+                          <tr>
+                              <th>3</th>
+                              <th>RAHUL</th>
+                              <th>19</th>
+                              <th>XXXXXXXXXX</th>
+                              <th>YYY@gmail.com</th>
+                          </tr>
+                          <tr>
+                              <th>4</th>
+                              <th>TANU</th>
+                              <th>20</th>
+                              <th>XXXXXXXXXX</th>
+                              <th>YYY@gmail.com</th>
+                          </tr>
+                        </tbody>
+                    </table> <br>
+                    <h3>TABLE</h3> <br>
+                    <h3>STUDENT_DETAILS</h3> <br>
+                    <table class="tab">
+                        <thead>
+                            <tr>
+                                <th>ROLL_NO</th>
+                                <th>NAME</th>
+                                <th>AGE</th>
+                                <th>PHONE_NO</th>
+                                <th>EMAIL_ADDRESS</th>
+                                <th>COURSE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <th>RAM</th>
+                                <th>18</th>
+                                <th>XXXXXXXXXX</th>
+                                <th>YYY@gmail.com</th>
+                                <th>MECHANICS</th>
+                            </tr>
+                            <tr>
+                              <th>2</th>
+                              <th>ABHI</th>
+                              <th>19</th>
+                              <th>XXXXXXXXXX</th>
+                              <th>YYY@gmail.com</th>
+                              <th>CSE</th>
+                          </tr>
+                          <tr>
+                              <th>3</th>
+                              <th>RAHUL</th>
+                              <th>19</th>
+                              <th>XXXXXXXXXX</th>
+                              <th>YYY@gmail.com</th>
+                              <th>CSE</th>
+                          </tr>
+                          <tr>
+                              <th>4</th>
+                              <th>TANU</th>
+                              <th>20</th>
+                              <th>XXXXXXXXXX</th>
+                              <th>YYY@gmail.com</th>
+                              <th>ELECTRICAL</th>
+                          </tr>
+                        </tbody>
+                    </table> <br>
+                    <h3>QUERIES</h3>
+                  <p>To delete the whole database <br>
+                    DROP DATABASE STUDENT; <br>
+                    After running the above query whole database will be deleted <br>
+                    To truncate Student_details table from student_data database. <br>
+                    TRUNCATE TABLE Student_details; <br>
+                    After running the above query STUDENT_DETAILS table will be truncated, i.e,  <br>
+                    the data will be deleted but the structure will remain in the memory for further operations. <br>
+                  </p>
+                  <br>
+                  <a href="#ALTER" class="btn">MORE ABOUT ALTER</a>
+            </section>
+            <section id="ALTER">
+                <h2>SQL|ALTER</h2>
+                <p>ALTER TABLE is used to add, delete/drop or modify columns in the existing table. <br>
+                    It is also used to add and drop various constraints on the existing table. <br> <br>
+                </p>
+                <h4>ALTER TABLE-ADD</h4>
+                <p>ADD is used to add columns into the existing table. <br>
+                    Sometimes we may require to add additional information, in that case we do not  <br>
+                    require to create the whole database again, ADD comes to our rescue. <br> <br>
+                   </p>
+                <h2>SYNTAX:</h2>
+                <p class="boxed">ALTER TABLE table_name <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ADD (Columnname_1  datatype, <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Columnname_2  datatype,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; … <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Columnname_n  datatype); <br>
+                </p> <br>
+                <h4>ALTER TABLE-DROP</h4>
+                <p>DROP COLUMN is used to drop column in a table. <br>
+                     Deleting the unwanted columns from the table.</p> <br>
+                <h2>SYNTAX:</h2>
+                <p class="boxed">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALTER TABLE table_name <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DROP COLUMN column_name; <br> <br>
+                </p>
+                <h4>ALTER TABLE-MODIFY</h4>
+                <p>It is used to modify the existing columns in a table. <br>
+                     Multiple columns can also be modified at once.</p> <br>
+                <h2>SYNTAX:</h2>
+                <p class="boxed">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ALTER TABLE table_name <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MODIFY column_name column_type; <br> <br>
+                </p>
+                <h5>QUERIES</h5> 
+                <h5>SAMPLE TABLE</h5>
+                <h5>STUDENT</h5>
+                <table class="tab">
+                    <thead>
+                        <tr>
+                            <th>ROLL_NO</th>
+                            <th>NAME</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <th>RAM</th>
+                        </tr>
+                        <tr>
+                          <th>2</th>
+                          <th>ABHI</th>
+                      </tr>
+                      <tr>
+                          <th>3</th>
+                          <th>RAHUL</th>
+                      </tr>
+                      <tr>
+                          <th>4</th>
+                          <th>TANU</th>
+                      </tr>
+                    </tbody>
+                </table> <br> 
+                <p>TO ADD 2 columns AGE and COURSE to table student. <br>
+                ALTER TABLE Student ADD (AGE number(3),COURSE varchar(40));</p> <br> 
+                <h4>OUTPUT</h4>
+                <table class="tab">
+                    <thead>
+                        <tr>
+                            <th>ROLL_NO</th>
+                            <th>NAME</th>
+                            <th>AGE</th>
+                            <th>COURSE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <th>RAM</th>
+                        </tr>
+                        <tr>
+                          <th>2</th>
+                          <th>ABHI</th>
+                      </tr>
+                      <tr>
+                          <th>3</th>
+                          <th>RAHUL</th>
+                      </tr>
+                      <tr>
+                          <th>4</th>
+                          <th>TANU</th>
+                      </tr>
+                    </tbody>
+                </table> <br> 
+                <p>MODIFY column COURSE in table Student
+                 ALTER TABLE Student MODIFY COURSE varchar(20); <br>
+                  After running the above query maximum size of Course Column is reduced to 20 from 40. <br>
+               
+               <h5>DROP column COURSE in table Student.</h5> 
+                ALTER TABLE Student DROP COLUMN COURSE;</p> <br>
+               <h4>OUTPUT</h4> <br>
+               <table class="tab">
+                <thead>
+                    <tr>
+                        <th>ROLL_NO</th>
+                        <th>NAME</th>
+                        <th>AGE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <th>RAM</th>
+                    </tr>
+                    <tr>
+                      <th>2</th>
+                      <th>ABHI</th>
+                  </tr>
+                  <tr>
+                      <th>3</th>
+                      <th>RAHUL</th>
+                  </tr>
+                  <tr>
+                      <th>4</th>
+                      <th>TANU</th>
+                  </tr>
+                </tbody>
+            </table> <br> 
+            <a href="#RENAME" class="btn">MORE ABOUT RENAME</a>
+            </section>
+            <section id="RENAME">
+                <h2>SQL|RENAME</h2>
+                <p>
+                    Sometimes we may want to rename our table to give it a more relevant name. <br>
+                    For this purpose we can use ALTER TABLE to rename the name of table. <br>                       
+                </p> <br>
+                <h2>SYNTAX:</h2>
+                <p class="boxed">ALTER TABLE table_name <br>
+                    RENAME TO new_table_name;
+                </p> <br>
+                <p>Columns can be also be given new name with the use of ALTER TABLE. <br>
+                ALTER TABLE table_name <br>
+                RENAME COLUMN old_name TO new_name; <br> <br>
+            </p>
+            <h3>SAMPLE TABLE</h3>
+            <h3>STUDENT</h3>
+            <table class="tab">
+                <thead>
+                    <tr>
+                        <th>ROLL_NO</th>
+                        <th>NAME</th>
+                        <th>AGE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <th>RAM</th>
+                        <th>18</th>
+                    </tr>
+                    <tr>
+                      <th>2</th>
+                      <th>ABHI</th>
+                      <th>19</th>
+                  </tr>
+                  <tr>
+                      <th>3</th>
+                      <th>RAHUL</th>
+                      <th>19</th>
+                  </tr>
+                  <tr>
+                      <th>4</th>
+                      <th>TANU</th>
+                      <th>20</th>
+                  </tr>
+                </tbody>
+            </table> <br> 
+            <p>Change the name of column NAME to FIRST_NAME in table Student. <br>
+                ALTER TABLE Student RENAME COLUMN NAME TO FIRST_NAME; </p> <br>
+            <h3>OUTPUT</h3>
+            <h3>STUDENT</h3>
+            <table class="tab">
+                <thead>
+                    <tr>
+                        <th>ROLL_NO</th>
+                        <th>FIRST_NAME</th>
+                        <th>AGE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <th>RAM</th>
+                        <th>18</th>
+                    </tr>
+                    <tr>
+                      <th>2</th>
+                      <th>ABHI</th>
+                      <th>19</th>
+                  </tr>
+                  <tr>
+                      <th>3</th>
+                      <th>RAHUL</th>
+                      <th>19</th>
+                  </tr>
+                  <tr>
+                      <th>4</th>
+                      <th>TANU</th>
+                      <th>20</th>
+                  </tr>
+                </tbody>
+            </table> <br> 
+            <p>Change the name of the table Student to Student_Details <br> 
+                ALTER TABLE Student RENAME TO Student_Details;</p>  <br> 
+            <h3>OUTPUT</h3> 
+            <h3>STUDENT_DETAILS</h3>
+            <table class="tab">
+                <thead>
+                    <tr>
+                        <th>ROLL_NO</th>
+                        <th>FIRST_NAME</th>
+                        <th>AGE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <th>RAM</th>
+                        <th>18</th>
+                    </tr>
+                    <tr>
+                      <th>2</th>
+                      <th>ABHI</th>
+                      <th>19</th>
+                  </tr>
+                  <tr>
+                      <th>3</th>
+                      <th>RAHUL</th>
+                      <th>19</th>
+                  </tr>
+                  <tr>
+                      <th>4</th>
+                      <th>TANU</th>
+                      <th>20</th>
+                  </tr>
+                </tbody>
+            </table> <br> 
+            <a href="#COMMENT" class="btn">MORE ABOUT COMMENT</a>
+            </section>
+            <section id="COMMENT">
+                <h2>SQL|COMMENT</h2>
+                <p>
+                    As is any programming languages comments matter a lot in SQL also. <br>
+                        In this set we will learn about writing comments in any SQL snippet. <br> <br>
+            
+                        Comments can be written in the following three formats: <br><br>
+                        
+                        1)Single line comments. <br>
+                        2)Multi line comments. <br>
+                        3)In line comments. <br>
+                        Single line comments:Comments starting and ending in a single line are <br>
+                         considered as single line. <br>
+                        Line starting with ‘–‘ is a comment and will not be executed. <br>
+                </p> <br>
+                <h2>SYNTAX:</h2>
+                <p class="boxed">
+                    -- single line comment <br>
+                        -- another comment <br>
+                        SELECT * FROM Customers; <br>
+                </p>     
+                       <p>Multi line comments: Comments starting in one line and ending in different <br>
+                        line are considered as multi line comments.  <br>
+                        Line starting with ‘/*’ is considered as starting point of comment and are <br>
+                         terminated when ‘*/’ is encountered.
+                </p> <br>
+                
+            <p class="boxed">/* multi line comment <br>
+                another comment */ <br>
+                SELECT * FROM Customers; <br> 
+            </p>
+            <p>In line comments: In line comments are an extension of multi line comments,  <br>
+                comments can be stated in between the statements and are enclosed in between ‘/*’ and ‘*/’. <br>
+            </p> <br>
+            <h2>EXAMPLE:</h2>
+            <p class="boxed">SELECT * FROM /* Customers; */  </p>
+            <p>More examples: </p>
+            <p class="boxed">Multi line comment -> <br>
+                /* SELECT * FROM Students; <br>
+                SELECT * FROM STUDENT_DETAILS; <br>
+                SELECT * FROM Orders; */ <br>
+                SELECT * FROM Articles;  <br>
+                <br>
+                In line comment -> <br>
+                SELECT * FROM Students; <br>
+                SELECT * FROM /* STUDENT_DETAILS; <br>
+                SELECT * FROM Orders; <br>
+                SELECT * FROM */ Articles; </p> <br> <br> 
+                <hr style="width:50%;text-align:left;margin-left:0">
+             
+                <a href="HOME.html" class="btn" target="_blank">HOME</a>
+            </section>
+               
+    </div>
+</body>
+</html>
